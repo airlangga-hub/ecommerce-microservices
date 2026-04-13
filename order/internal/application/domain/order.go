@@ -6,8 +6,8 @@ import (
 
 type OrderItem struct {
 	ProductCode string  `json:"product_code"`
-	UnitPrice   float32 `json:"unit_price"`
-	Quantity    int32   `json:"quantity"`
+	UnitPrice   float64 `json:"unit_price"`
+	Quantity    int64   `json:"quantity"`
 }
 type Order struct {
 	ID         int64       `json:"id"`

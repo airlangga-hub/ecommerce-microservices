@@ -18,11 +18,12 @@ type Order struct {
 	Status     string
 	OrderItems []OrderItem
 }
+
 type OrderItem struct {
 	gorm.Model
 	ProductCode string
-	UnitPrice   float32
-	Quantity    int32
+	UnitPrice   float64
+	Quantity    int64
 	OrderID     uint
 }
 
@@ -43,6 +44,7 @@ func (a Adapter) Get(id string) (domain.Order, error) {
 	res := a.db.First(&orderEntity, id)
 
 	var orderItems []domain.OrderItem
+
 	for _, orderItem := range orderEntity.OrderItems {
 		orderItems = append(orderItems, domain.OrderItem{
 			ProductCode: orderItem.ProductCode,
