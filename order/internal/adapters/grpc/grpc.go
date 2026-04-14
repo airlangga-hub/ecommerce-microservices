@@ -7,6 +7,7 @@ import (
 	"net"
 
 	"github.com/airlangga-hub/ecommerce-microservices-proto/golang/order"
+	"github.com/airlangga-hub/ecommerce-microservices/order/config"
 	"github.com/airlangga-hub/ecommerce-microservices/order/internal/application/domain"
 	"github.com/airlangga-hub/ecommerce-microservices/order/internal/ports"
 	"google.golang.org/grpc"
