@@ -4,7 +4,7 @@ go 1.25.3
 
 require (
 	github.com/airlangga-hub/ecommerce-microservices-proto/golang/order v0.0.3
-	github.com/airlangga-hub/ecommerce-microservices-proto/golang/payment v0.0.5
+	github.com/airlangga-hub/ecommerce-microservices-proto/golang/payment v0.0.6
 	google.golang.org/grpc v1.80.0
 	gorm.io/driver/mysql v1.6.0
 	gorm.io/gorm v1.31.1
