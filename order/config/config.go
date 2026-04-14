@@ -14,13 +14,13 @@ func GetDataSourceURL() string {
 	return getEnvironmentValue("DATA_SOURCE_URL")
 }
 
-func GetApplicationPort() int {
+func GetApplicationPort() int64 {
 	portStr := getEnvironmentValue("APPLICATION_PORT")
 	port, err := strconv.Atoi(portStr)
 	if err != nil {
 		log.Fatalf("port: %s is invalid", portStr)
 	}
-	return port
+	return int64(port)
 }
 
 func GetPaymentServiceUrl() string {
