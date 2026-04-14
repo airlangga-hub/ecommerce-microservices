@@ -24,7 +24,7 @@ func NewAdapter(api ports.APIPort, port int64) *Adapter {
 	return &Adapter{api: api, port: port}
 }
 
-func (a Adapter) Run() {
+func (a *Adapter) Run() {
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", a.port))
 	if err != nil {
 		log.Fatalf("failed to listen on port %d, error: %v", a.port, err)
@@ -43,7 +43,7 @@ func (a Adapter) Run() {
 	}
 }
 
-func (a Adapter) CreateOrder(ctx context.Context, request *order.CreateOrderRequest) (*order.CreateOrderResponse, error) {
+func (a *Adapter) CreateOrder(ctx context.Context, request *order.CreateOrderRequest) (*order.CreateOrderResponse, error) {
 	var orderItems []domain.OrderItem
 
 	for _, orderItem := range request.Items {

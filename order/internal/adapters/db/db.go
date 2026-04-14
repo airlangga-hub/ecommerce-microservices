@@ -39,7 +39,7 @@ func NewAdapter(dataSourceUrl string) (*Adapter, error) {
 	return &Adapter{db: db}, nil
 }
 
-func (a Adapter) Get(id string) (domain.Order, error) {
+func (a *Adapter) Get(id string) (domain.Order, error) {
 	var orderEntity Order
 	res := a.db.First(&orderEntity, id)
 
@@ -64,7 +64,7 @@ func (a Adapter) Get(id string) (domain.Order, error) {
 	return order, res.Error
 }
 
-func (a Adapter) Save(order *domain.Order) error {
+func (a *Adapter) Save(order *domain.Order) error {
 	var orderItems []OrderItem
 	for _, orderItem := range order.OrderItems {
 		orderItems = append(orderItems, OrderItem{
