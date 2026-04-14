@@ -24,8 +24,9 @@ func GetApplicationPort() int {
 }
 
 func getEnvironmentValue(key string) string {
-	if os.Getenv(key) == "" {
+	k := os.Getenv(key)
+	if k == "" {
 		log.Fatalf("%s environment variable is missing.", key)
 	}
-	return os.Getenv(key)
+	return k
 }
